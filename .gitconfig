@@ -1,0 +1,41 @@
+[alias]
+	s = status
+	cm = commit -m
+	co = checkout
+	lg = log --all --graph
+	lgc = log --all --graph --oneline
+	br = branch -a
+	sw = switch
+	last = log -1 HEAD
+	a = add
+	d = diff
+	ds = diff --staged
+	dlc = diff HEAD
+	r = restore
+	rs = restore --staged
+	aa = add .
+	dlast = diff HEAD
+	cls = config --global --list
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[core]
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+
+[user]
+  useConfigOnly = true
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = red
+	remote = cyan
+
+[color "status"]
+	changed = yellow
