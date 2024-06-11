@@ -21,6 +21,7 @@ mcd() {
   cd "$1"
 }
 
+# Credits to https://github.com/anishathalye
 # Go up [n] directories
 up() {
   local cdir="$(pwd)"
