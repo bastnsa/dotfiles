@@ -16,16 +16,7 @@ return {
 				lua = 210,
 			},
 			highlight = {
-				"BracketA",
-				"BracketB",
-				"BracketC",
-				"BracketD",
-				-- "RainbowDelimiterYellow",
-				-- "RainbowDelimiterBlue",
-				-- "RainbowDelimiterOrange",
-				-- "RainbowDelimiterGreen",
-				-- "RainbowDelimiterViolet",
-				-- "RainbowDelimiterCyan",
+				"@punctuation.bracket",
 			},
 			blacklist = {
 				"html",

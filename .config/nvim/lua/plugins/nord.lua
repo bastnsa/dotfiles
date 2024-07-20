@@ -8,8 +8,8 @@ return {
 			search = { theme = "vscode" },
 			styles = {
 				keywords = { fg = "#9aaac6" },
-				functions = { fg = "#88C0D0" },
-				variables = { fg = "#81a1c1" },
+				functions = { fg = "#81a1c1" },
+				variables = { fg = "#eceff4" },
 				bufferline = {
 					modified = { italic = false },
 				},
