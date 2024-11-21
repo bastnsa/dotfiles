@@ -13,7 +13,7 @@ opt.guicursor = "n-v-c-i:block"
 opt.termguicolors = true
 
 -- General UX
-opt.scrolloff = 12
+opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.splitright = true
 opt.splitbelow = true
