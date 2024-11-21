@@ -26,7 +26,6 @@ return {
 				"lua_ls",
 				"marksman",
 				"pyright",
-				"tsserver",
 			},
 		})
 		require("mason-tool-installer").setup({
