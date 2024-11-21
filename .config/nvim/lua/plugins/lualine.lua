@@ -29,18 +29,18 @@ return {
 			normal = {
 				a = { fg = c.nord1, bg = c.nord9, gui = "bold" },
 				b = { fg = c.nord9, bg = c.nord1 },
-				c = { fg = c.nord4, bg = c.nord0 },
+				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			command = {
 				a = { fg = c.nord1, bg = c.purple, gui = "bold" },
 				b = { fg = c.purple, bg = c.nord1 },
-				c = { fg = c.nord4, bg = c.nord0 },
+				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			insert = { a = { fg = c.nord1, bg = c.nord6, gui = "bold" } },
 			visual = { a = { fg = c.nord1, bg = c.nord7, gui = "bold" } },
 			replace = { a = { fg = c.nord1, bg = c.red, gui = "bold" } },
 			inactive = {
-				c = { fg = c.nord9, bg = c.nord0 },
+				c = { fg = c.nord0, bg = c.nord2 },
 			},
 		}
 
