@@ -16,7 +16,6 @@ function RunCode()
 	local file_extension = vim.fn.expand("%:e")
 	local selected_cmd = ""
 	local term_cmd = "bot 15 new | term "
-	-- local term_cmd = "terminal "
 	local supported_filetypes = {
 		html = {
 			default = "%",
@@ -31,7 +30,6 @@ function RunCode()
 		cpp = {
 			default = "g++ % -o  $fileBase && $fileBase",
 			debug = "g++ -g % -o  $fileBase",
-			-- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
 			competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
 		},
 		py = {
@@ -45,7 +43,6 @@ function RunCode()
 		},
 		js = {
 			default = "node %",
-			-- debug = "node --inspect %",
 		},
 		ts = {
 			default = "tsc % && node $fileBase",
