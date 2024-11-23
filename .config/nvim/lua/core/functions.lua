@@ -35,7 +35,7 @@ function RunCode()
 			competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
 		},
 		py = {
-			default = "python %",
+			default = "python3 %",
 		},
 		go = {
 			default = "go run %",
