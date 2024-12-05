@@ -8,6 +8,12 @@ export LSCOLORS=exGxBxDxbxEgEdxbxgxcxd
 export LS_COLORS='di=34:ex=31'
 export BAT_THEME=base16
 
+# Fzf
+source <(fzf --zsh)
+source ~/.shell/settings-fzf.sh
+bindkey -r '^T'
+bindkey '^F' fzf-file-widget
+
 # Git
 export GIT_MERGE_AUTOEDIT=no
 

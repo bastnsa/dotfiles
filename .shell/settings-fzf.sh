@@ -1,4 +1,3 @@
-source <(fzf --zsh)
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 export FZF_DEFAULT_OPTS="--bind ctrl-j:next-history,ctrl-k:previous-history'"
 export FZF_DEFAULT_OPTS="--preview 'echo {}'"
@@ -10,5 +9,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="" --preview-window="border-rounded" --padding="2,3,2,3"
   --prompt="> " --marker=">" --pointer=">" --separator="─"
   --scrollbar="│" --info="right"'
-bindkey -r '^T'
-bindkey '^F' fzf-file-widget
