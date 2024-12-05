@@ -1,20 +1,12 @@
 # Aliases
-alias cat='bat'
 alias cl='clear'
-alias ff='fzf'
-alias l='ls -G'
-alias la='ls -G -a'
-alias lc='eza --grid --color=always --group-directories-first --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias lca='eza --all --grid --color=always --group-directories-first --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias ll='ls -G -l'
-alias lla='ls -G -l -a'
-alias llc='eza --all --color=always --long --icons=always --no-user'
+alias l='eza --grid --color=always --group-directories-first --long --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias la='eza --all --grid --color=always --group-directories-first --long --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias lla='eza --all --color=always --long --icons=always'
 alias mv='mv -i'
 alias nv='nvim'
 alias py='python3'
-alias so='source ~/.zshrc'
-alias tr='tree -C -L 2'
-alias trc='eza --all --color=always --tree --level=2 --group-directories-first --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias t='eza --all --tree --level=2 --color=always --group-directories-first --long --no-filesize --icons=always --no-time --no-user --no-permissions'
 
 # Create a directory and cd into it
 mcd() {
