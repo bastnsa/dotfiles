@@ -1,21 +1,16 @@
 [alias]
-	s = status
-	cm = commit -m
-	co = checkout
-	lg = log --all --graph
-	lgc = log --all --graph --oneline
-	br = branch -a
-	sw = switch
-	last = log -1 HEAD
 	a = add
+	aa = add .
+	br = branch -a
+	cl = config --global --list
+	co = checkout
 	d = diff
 	ds = diff --staged
-	dlc = diff HEAD
-	r = restore
-	rs = restore --staged
-	aa = add .
-	dlast = diff HEAD
-	cls = config --global --list
+	lg = log --all --graph
+	lgs = log --all --graph --oneline
+	lgc = log -1 HEAD
+	s = status
+	sw = switch
 
 [init]
 	defaultBranch = main
