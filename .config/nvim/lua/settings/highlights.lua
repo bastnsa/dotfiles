@@ -35,6 +35,7 @@ vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = c.nord1 })
 
 -- Comments
 vim.api.nvim_set_hl(0, "@comment", { fg = c.nord3 })
+vim.api.nvim_set_hl(0, "@string.documentation", { fg = c.green })
 
 -- Functions
 vim.api.nvim_set_hl(0, "@function.builtin", { fg = c.nord9 })
@@ -50,11 +51,11 @@ vim.api.nvim_set_hl(0, "@keyword.conditional.ternary", { fg = c.grey2 })
 vim.api.nvim_set_hl(0, "@keyword.coroutine", { fg = c.nord9 })
 vim.api.nvim_set_hl(0, "@keyword.exception", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@keyword.function", { fg = c.grey, italic = true })
-vim.api.nvim_set_hl(0, "@keyword.operator", { fg = c.nord9 })
-vim.api.nvim_set_hl(0, "@keyword.repeat", { fg = c.purple })
-vim.api.nvim_set_hl(0, "@keyword.return", { fg = c.nord8 })
+vim.api.nvim_set_hl(0, "@keyword.operator", { fg = c.grey })
+vim.api.nvim_set_hl(0, "@keyword.repeat", { fg = c.grey })
+vim.api.nvim_set_hl(0, "@keyword.return", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@type", { fg = c.nord8 })
-vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.nord8 })
+vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.nord9 })
 
 -- Markup
 vim.api.nvim_set_hl(0, "@markup.heading", { fg = c.nord4 })
