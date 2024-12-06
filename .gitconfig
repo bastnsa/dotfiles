@@ -28,9 +28,5 @@
 [color]
 	ui = true
 
-[color "branch"]
-	current = red
-	remote = cyan
-
 [color "status"]
 	changed = yellow
