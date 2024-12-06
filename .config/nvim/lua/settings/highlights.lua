@@ -24,7 +24,7 @@ local c = {
 
 -- General
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { bold = false })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.purple, bold = false })
 vim.api.nvim_set_hl(0, "DashboardArt", { fg = c.nord4 })
 vim.api.nvim_set_hl(0, "DashboardIcons", { fg = c.grey })
 vim.api.nvim_set_hl(0, "DashboardKeys", { fg = c.purple })
