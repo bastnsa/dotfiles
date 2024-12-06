@@ -11,6 +11,7 @@ opt.showmode = false
 opt.fillchars = { eob = " " }
 opt.guicursor = "n-v-c-i:block"
 opt.termguicolors = true
+opt.listchars:append({ eol = "¬" })
 
 -- General UX
 opt.scrolloff = 10
