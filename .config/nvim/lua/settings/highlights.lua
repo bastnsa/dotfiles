@@ -60,10 +60,11 @@ vim.api.nvim_set_hl(0, "@type", { fg = c.nord8 })
 vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.nord9 })
 
 -- Markup
-vim.api.nvim_set_hl(0, "@markup.heading", { fg = c.nord4 })
+vim.api.nvim_set_hl(0, "@markup.heading", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@markup.link", { fg = c.white })
 vim.api.nvim_set_hl(0, "@markup.link.label", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@markup.link.url", { fg = c.nord8 })
+vim.api.nvim_set_hl(0, "@markup.list", { fg = c.grey2 })
 vim.api.nvim_set_hl(0, "@markup.quote", { fg = c.grey })
 
 -- Neotree
