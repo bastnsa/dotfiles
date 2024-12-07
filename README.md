@@ -1,12 +1,32 @@
 # Dotfiles
 
-A repo to better manage and showcase my dotfiles.
+A place to better manage and showcase my dotfiles.
 
-Feel free to pick apart sections and copy lines into your own files.
+This repository serves as both personal documentation and a guide for others—feel free to fork it, customize it to your needs, and use it as a foundation for your own setup.
 
-At a glance, this specific configuration is kept simple and straightforward; however, adjustments will have to be made depending on your system.
+Although this configuration is simple and straightforward, keep in mind that adjustments might have to be made depending on your system.
 
-However, with the implementation of [GNU Stow](https://www.gnu.org/software/stow/), the overall structure can be configured rather quickly and become malleable to any preference.
+## How It Works
+
+GNU Stow helps manage dotfiles by creating symbolic links from your home directory to the actual configuration files stored in a version-controlled directory. This means that instead of having your dotfiles scattered throughout your home directory, you can keep them organized in one place while maintaining the expected structure for your system.
+
+Once installed, running `stow` will create a symbolic link for each file in the directory you pass into it (except for [ignored files](https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists)), and then these will be placed inside the parent directory of where you ran the command.
+
+For example, if you have a .zshrc file, instead of storing it directly in your home directory, you can:
+
+1.  Store the actual file in `~/dotfiles/.zshrc`
+2.  Use Stow to create a symbolic link at `~/.zshrc` that points to `~/dotfiles/.zshrc`
+
+This approach makes it easier to:
+
+- Track changes with version control
+- Share configurations across different machines
+- Keep your dotfiles organized in one central location
+- Quickly deploy your entire configuration on a new system
+
+To learn more about implementing Stow according to your own configuration or to just get a better idea of how it works, watch [this](https://www.youtube.com/watch?v=FHuwzbpTTo0&list=PLVICUuo69SVpj_kjGKeUFKJSxAKdtr4uS&index=3&t=1s).
+
+On the other hand, if you wish to have something similar to my current configuration, then follow the steps below.
 
 ### Neovim
 
@@ -18,70 +38,55 @@ However, with the implementation of [GNU Stow](https://www.gnu.org/software/stow
 
 ## Requirements
 
-### Git
+Install the following directly or with your preferred package manager:
 
-```
-brew install git
-```
-
-### Stow
-
-```
-brew install stow
-```
-
-<br>
-
-**TL;DR**
-
-Once installed, running `stow` will create a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) for each file in the directory you pass into it (except for [ignored files](https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists)), and then these will be placed inside the parent directory of where you ran the command.
-
-To learn more about implementing Stow according to your own configuration or to just get a better idea of how it works, watch [this](https://www.youtube.com/watch?v=FHuwzbpTTo0&list=PLVICUuo69SVpj_kjGKeUFKJSxAKdtr4uS&index=3&t=1s).
-
-On the other hand, if you wish to mirror something similar to my current configuration, then ensure you have the following installed:
-
-- A true color terminal (I use iTerm2)
+- [Git](https://git-scm.com)
+- [GNU Stow](https://www.gnu.org/software/stow/)
 - [Neovim](https://neovim.io)
 - [Tmux](https://github.com/tmux/tmux)
-- [bat](https://github.com/sharkdp/bat)
-- [eza](https://github.com/eza-community/eza)
-- [fzf](https://github.com/junegunn/fzf)
-- [ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation)
-- [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [Eza](https://github.com/eza-community/eza)
+- [Ripgrep](https://github.com/BurntSushi/ripgrep) (dependency for the Neovim [telescope](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#getting-started) plugin)
+- [Nerd Font](https://www.nerdfonts.com) (dependency for the featured Neovim icons, I use JetBrainsMono)
 
-**Note:** Depending on the Neovim plugin, you might also need to install other tools. I advise doing a quick scan of each plugin to spot any overlooked dependencies.
+In terms of terminal emulators, I use [iTerm2](https://iterm2.com), but any terminal emulator that supports true color should do the job just fine. I've also included my iTerm2 json profile, which can be imported directly.
 
-## Installation
+## Getting Started
 
-Clone this dotfiles repository in your `$HOME` directory and cd into it:
+Clone this dotfiles repository in your `$HOME` directory and `cd` into it:
 
 ```sh
 git clone https://github.com/bastnsa/dotfiles.git
 cd dotfiles
 ```
 
-Use `stow` to create a symbolic link for each file in `~/dotfiles`:
+Use `stow .` to create a symbolic link for each file in `~/dotfiles`:
+
+```
+stow . # stow everything in the current directory
+```
+
+If you receive an error, then it's likely you have a file (or files) with matching relative paths present in your home directory. For example, it is possible that a `.zshrc` file already exists in your home directory.
+
+My recommendation is to back up any conflicting files, then `cd` back into `~/dotfiles` and finally proceed with the previous command:
 
 ```
 stow .
 ```
 
-If you receive an error, then it's likely you have a file (or files) with matching relative paths present in your home directory.
-
-My recommendation is to backup the conflicting files in your home directory and then proceed with the previous command (make sure to cd back in the dotfiles directory):
-
-```
-stow .
-```
-
-Finally, if everything went according to plan, you should see symbolic links in your home directory that link back into the dotfiles directory.
+Finally, if everything went according to plan, you should see symbolic links from your home directory that link back into the dotfiles directory.
 
 ![symlinks](./assets/symlinks.png)
 
-Thus, any change you make through the symbolic link will be reflected in the dotfiles directory, and vice versa. Pretty cool right?
+## Important to Note
 
-From here, you can push the clone into your own dotfiles repository on github and make adjustments as needed.
+#### Tmux
 
-Also, feel free to reach out if you need help with any issues or have questions.
+In order for the tmux configuration to work properly, be sure to install [TPM](https://github.com/tmux-plugins/tpm?tab=readme-ov-file#tmux-plugin-manager) (the tmux plugin manager). Now just start a tmux session and press `prefix` + `I` (capital i, as in Install) to fetch any plugins listed in `~/dotfiles/.config/tmux/tmux.conf`. This command will install catpuccin and the featured status line should appear.
+
+After installation, any plugins will be sourced from `~/.tmux/plugins/` and the configuration should work as expected.
+
+#### Adding New Files
+
+When customizing your dotfiles setup, remember that any new configuration files you add to the dotfiles directory will need to be "stowed" to create the appropriate symbolic links. After adding a new file, simply run `stow .` from within your dotfiles directory. This ensures that a symbolic link is created in your home directory that points to your new configuration file. Without this step, your system won't recognize or use the new configuration file since no symbolic link will exist.
+
+Feel free to reach out if you need help with any issues or have questions.
