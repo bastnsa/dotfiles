@@ -6,6 +6,3 @@ require("core")
 
 -- Settings
 require("settings")
-
--- Highlights
-require("settings.highlights")
