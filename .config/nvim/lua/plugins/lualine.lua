@@ -2,30 +2,8 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local lualine = require("lualine")
-		local c = {
-			nord0 = "#2E3440",
-			nord1 = "#3B4252",
-			nord2 = "#434C5E",
-			nord3 = "#4C566A",
-			nord4 = "#D8DEE9",
-			nord5 = "#E5E9F0",
-			nord6 = "#ECEFF4",
-			nord7 = "#8FBCBB",
-			nord8 = "#88C0D0",
-			nord9 = "#81A1C1",
-			nord10 = "#5E81AC",
-			green = "#A3BE8C",
-			grey = "#9AAAC6",
-			grey2 = "#808FA9",
-			orange = "#D08770",
-			purple = "#B48EAD",
-			red = "#BF616A",
-			white = "#FFFFFF",
-			yellow = "#EBCB8B",
-		}
-
-		local custom_nord = {
+		local c = require("settings.colors")
+		local nord = {
 			normal = {
 				a = { fg = c.nord1, bg = c.nord9, gui = "bold" },
 				b = { fg = c.nord9, bg = c.nord1 },
@@ -44,11 +22,11 @@ return {
 			},
 		}
 
-		lualine.setup({
+		require("lualine").setup({
 			options = {
 				icons_enabled = true,
 				ignore_focus = { "neo-tree" },
-				theme = custom_nord,
+				theme = nord,
 			},
 			sections = {
 				lualine_c = { { "filename", symbols = { unnamed = "[Untitled]" } } },
