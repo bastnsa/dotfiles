@@ -1,5 +1,29 @@
 setopt PROMPT_SUBST
 
+# Enable vi mode
+set -o vi
+
+# Set initial prompt character on new prompt
+function line_init() {
+    PROMPT_CHAR=">"
+    zle reset-prompt
+}
+zle -N line_init
+
+# Handle mode changes
+function keymap_select() {
+    case $KEYMAP in
+        vicmd)
+            PROMPT_CHAR="<"
+            ;;
+        viins|main)
+            PROMPT_CHAR=">"
+            ;;
+    esac
+    zle reset-prompt
+}
+zle -N keymap_select
+
 is_git_repo() {
     git rev-parse --is-inside-work-tree >/dev/null 2>&1
 }
@@ -31,4 +55,4 @@ git_info() {
     fi
 }
 
-PROMPT='%F{black}ba%f %F{blue}%~%f $(git_info)%F{white}>%f '
+PROMPT='%F{black}ba%f %F{blue}%~%f $(git_info)%F{white}${PROMPT_CHAR}%f '
