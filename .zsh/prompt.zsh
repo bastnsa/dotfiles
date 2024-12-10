@@ -4,14 +4,14 @@ setopt PROMPT_SUBST
 set -o vi
 
 # Set initial prompt character on new prompt
-function line_init() {
+function zle-line-init() {
     PROMPT_CHAR=">"
     zle reset-prompt
 }
-zle -N line_init
+zle -N zle-line-init
 
 # Handle mode changes
-function keymap_select() {
+function zle-keymap-select() {
     case $KEYMAP in
         vicmd)
             PROMPT_CHAR="<"
@@ -22,7 +22,7 @@ function keymap_select() {
     esac
     zle reset-prompt
 }
-zle -N keymap_select
+zle -N zle-keymap-select
 
 is_git_repo() {
     git rev-parse --is-inside-work-tree >/dev/null 2>&1
