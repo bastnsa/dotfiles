@@ -4,9 +4,7 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
-
-		treesitter.setup({
+		require("nvim-treesitter.configs").setup({
 			highlight = {
 				enable = true,
 				custom_captures = {

@@ -1,9 +1,6 @@
----@diagnostic disable: missing-fields
 return {
 	"rcarriga/nvim-notify",
 	config = function()
-		require("notify").setup({
-			-- stages = "slide",
-		})
+		require("notify").setup()
 	end,
 }
