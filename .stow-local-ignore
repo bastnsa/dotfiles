@@ -6,6 +6,6 @@
 ^/LICENSE.*
 ^/COPYING
 
-^/assets/.*
+assets
 
 iterm-nord.json
