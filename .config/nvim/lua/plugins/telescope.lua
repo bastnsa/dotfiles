@@ -23,9 +23,18 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>fl", builtin.find_files, {})
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
-		vim.keymap.set("n", "<leader>fs", builtin.live_grep, {})
+		vim.keymap.set("n", "<leader>fl", function()
+			builtin.find_files({ hidden = true })
+		end, {})
+		vim.keymap.set("n", "<leader>fs", function()
+			builtin.live_grep({
+				hidden = true,
+				additional_args = function()
+					return { "--hidden" }
+				end,
+			})
+		end, {})
 		vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", {})
 	end,
 }

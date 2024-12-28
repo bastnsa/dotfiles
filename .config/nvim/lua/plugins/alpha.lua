@@ -33,8 +33,12 @@ return {
 			dashboard.button("e", "  Explore", ":Neotree filesystem reveal left toggle<CR>"),
 			dashboard.button("r", "  Recent", ":Telescope oldfiles<CR>"),
 			dashboard.button("n", "  New File", ":ene<CR>"),
-			dashboard.button("f", "󰈞  Find File", ":Telescope find_files<CR>"),
-			dashboard.button("t", "󱎸  Find Text", ":Telescope live_grep<CR>"),
+			dashboard.button("f", "󰈞  Find File", ":Telescope find_files hidden=true<CR>"),
+			dashboard.button(
+				"t",
+				"󱎸  Find Text",
+				":lua require('telescope.builtin').live_grep({hidden=true, additional_args=function() return {'--hidden'} end})<CR>"
+			),
 			dashboard.button("l", "  Load Lazy", ":Lazy<CR>"),
 			dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 		}
