@@ -1,12 +1,24 @@
-# Aliases
+# Main aliases
 alias cl='clear'
-alias l='eza --grid --color=always --group-directories-first --long --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias la='eza --all --grid --color=always --group-directories-first --long --no-filesize --icons=always --no-time --no-user --no-permissions'
-alias lla='eza --all --color=always --long --icons=always'
+alias l='eza --color=always --grid --group-directories-first --icons=always --long --no-filesize --no-permissions --no-time --no-user'
+alias la='eza --all --color=always --grid --group-directories-first --icons=always --long --no-filesize --no-permissions --no-time --no-user'
+alias ll='eza --all --color=always --icons=always --long --no-user --reverse --sort=modified'
+alias t='eza --all --color=always --group-directories-first --icons=always --level=2 --long --no-filesize --no-permissions --no-time --no-user --tree'
+alias cp='cp -i'
 alias mv='mv -i'
+alias rm='rm -i'
 alias nv='nvim'
 alias py='python3'
-alias t='eza --all --tree --level=2 --color=always --group-directories-first --long --no-filesize --icons=always --no-time --no-user --no-permissions'
+
+# Shell specific
+if [ -n "$BASH_VERSION" ]; then
+    alias fman='compgen -c | fzf | xargs man'
+    alias so='source ~/.bashrc'
+fi
+if [ -n "$ZSH_VERSION" ]; then
+    alias fman='print -l ${(k)commands} | fzf | xargs man'
+    alias so='source ~/.zshrc'
+fi
 
 # Create a directory and cd into it
 mcd() {

@@ -3,7 +3,6 @@ source ~/.zsh/prompt.zsh
 
 # Aliases
 source ~/.shell/aliases.sh
-alias so='source ~/.zshrc'
 
 # Functions
 source ~/.shell/functions.sh
