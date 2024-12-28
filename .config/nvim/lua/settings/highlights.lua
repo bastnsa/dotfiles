@@ -3,6 +3,7 @@
 local c = require("settings.colors")
 
 -- General
+vim.api.nvim_set_hl(0, "Cursor", { fg = "#1f1f1f", bg = c.nord4 })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.purple, bold = false })
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = c.nord1 })

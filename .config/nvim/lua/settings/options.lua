@@ -9,7 +9,7 @@ opt.wrap = false
 opt.signcolumn = "yes"
 opt.showmode = false
 opt.fillchars = { eob = " " }
-opt.guicursor = "n-v-c-i:block"
+opt.guicursor = "n-v-c-i:block-Cursor"
 opt.termguicolors = true
 opt.listchars:append({ eol = "¬" })
 
