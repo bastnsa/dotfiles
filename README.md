@@ -79,12 +79,6 @@ Finally, if everything went according to plan, you should see symbolic links fro
 
 ## Important to Note
 
-#### Tmux
-
-In order for the tmux configuration to work properly, be sure to install [TPM](https://github.com/tmux-plugins/tpm?tab=readme-ov-file#tmux-plugin-manager) (the tmux plugin manager). Now just start a tmux session and press `prefix` + `I` (capital i, as in Install) to fetch any plugins listed in `~/dotfiles/.config/tmux/tmux.conf`. This command will install catpuccin and the featured status line should appear.
-
-After installation, any plugins will be sourced from `~/.tmux/plugins/` and the configuration should work as expected.
-
 #### Adding New Files
 
 When customizing your dotfiles setup, remember that any new configuration files you add to the dotfiles directory will need to be "stowed" to create the appropriate symbolic links. After adding a new file, simply run `stow .` from within your dotfiles directory. This ensures that a symbolic link is created in your home directory that points to your new configuration file. Without this step, your system won't recognize or use the new configuration file since no symbolic link will exist.
