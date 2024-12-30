@@ -4,7 +4,7 @@ A place to better manage and showcase my dotfiles.
 
 This repository serves as both personal documentation and a guide for others—feel free to fork it, customize it to your needs, and use it as a foundation for your own setup.
 
-Although this configuration is simple and straightforward, keep in mind that adjustments might have to be made depending on your system.
+My current setup consists of macOS (zsh) and Ubuntu running on WSL 2 (bash). Although I tried to account for the differences in environments, keep in mind that adjustments might have to be made depending on your system.
 
 ## How It Works
 
@@ -44,11 +44,21 @@ Install the following directly or with your preferred package manager:
 - [GNU Stow](https://www.gnu.org/software/stow/)
 - [Neovim](https://neovim.io)
 - [Tmux](https://github.com/tmux/tmux)
-- [Eza](https://github.com/eza-community/eza)
-- [Ripgrep](https://github.com/BurntSushi/ripgrep) (dependency for the Neovim [telescope](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#getting-started) plugin)
-- [Nerd Font](https://www.nerdfonts.com) (dependency for the featured Neovim icons, I use JetBrainsMono)
+- [Eza](https://github.com/eza-community/eza) (a modern and colorful replacement for ls)
+- [Ripgrep](https://github.com/BurntSushi/ripgrep) (suggested dependency for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#getting-started))
+- [Nerd Font](https://www.nerdfonts.com) (required for the featured Neovim icons, I use JetBrainsMono)
+- C++ compiler (required for compiling certain Neovim plugins):
+  - For macOS: Xcode Command Line Tools
+  - For Linux: GCC (GNU Compiler Collection)
+- Clipboard tool (required for Neovim to properly yank to system clipboard):
+  - For macOS: pbcopy (built-in)
+  - For WSL: win32yank
+- Node and npm (required for certain Neovim plugins)
+- Python 3 (required for certain Neovim plugins)
+- Python venv module and pip (needs to be installed separately on some Linux distros):
+  - For Ubuntu/Debian: `sudo apt install python3-venv python3-pip`
 
-In terms of terminal emulators, I use [iTerm2](https://iterm2.com), but any terminal emulator that supports true color should do the job just fine. I've also included my iTerm2 json profile, which can be imported directly.
+In terms of terminal emulators, I use [iTerm2](https://iterm2.com) on macOS, but any terminal that supports true color should do the job just fine. I've also included my iTerm2 json profile, which can be imported directly.
 
 ## Getting Started
 
@@ -59,13 +69,13 @@ git clone https://github.com/bastnsa/dotfiles.git
 cd dotfiles
 ```
 
-Use `stow .` to create a symbolic link for each file in `~/dotfiles`:
+Use `stow .` to create a symbolic link for every file in `~/dotfiles`:
 
 ```
-stow . # stow everything in the current directory
+stow .
 ```
 
-If you receive an error, then it's likely you have a file (or files) with matching relative paths present in your home directory. For example, it is possible that a `.zshrc` file already exists in your home directory.
+If you receive an error, then it's likely you have a file (or files) with matching relative paths present in your home directory. For example, it is possible that a `.bashrc` or `.zshrc` file already exists in your home directory.
 
 My recommendation is to back up any conflicting files, then `cd` back into `~/dotfiles` and finally proceed with the previous command:
 
