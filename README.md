@@ -44,7 +44,9 @@ Install the following directly or with your preferred package manager:
 - [GNU Stow](https://www.gnu.org/software/stow/)
 - [Neovim](https://neovim.io)
 - [Tmux](https://github.com/tmux/tmux)
-- [Eza](https://github.com/eza-community/eza) (a modern and colorful replacement for ls)
+- [Bat](https://github.com/sharkdp/bat)
+- [Eza](https://github.com/eza-community/eza)
+- [Fzf](https://github.com/junegunn/fzf)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) (suggested dependency for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#getting-started))
 - [Nerd Font](https://www.nerdfonts.com) (required for the featured Neovim icons, I use JetBrainsMono)
 - C++ compiler (required for compiling certain Neovim plugins):
@@ -58,7 +60,7 @@ Install the following directly or with your preferred package manager:
 - Python venv module and pip (needs to be installed separately on some Linux distros):
   - For Ubuntu/Debian: `sudo apt install python3-venv python3-pip`
 
-In terms of terminal emulators, I use [iTerm2](https://iterm2.com) on macOS, but any terminal that supports true color should do the job just fine. I've also included my iTerm2 json profile, which can be imported directly.
+In terms of terminal emulators, I use [iTerm2](https://iterm2.com) on macOS, but any terminal that supports true color should do the job just fine. I've also included my json profile, which can be imported directly.
 
 ## Getting Started
 
