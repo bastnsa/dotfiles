@@ -2,10 +2,7 @@
 autoload -U compinit compinit
 zstyle ':completion:*' list-dirs-first true
 
-# Colors
-export CLICOLOR=1
-export LSCOLORS=exGxBxDxbxEgEdxbxgxcxd 
-export LS_COLORS='di=34:ex=31'
+# Bat
 export BAT_THEME=base16
 
 # Fzf
