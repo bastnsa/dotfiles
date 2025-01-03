@@ -27,7 +27,7 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Vim style keys
+# Vim style navigation
 bindkey '^j' down-line-or-history
 bindkey '^k' up-line-or-history
 bindkey '^h' backward-char
