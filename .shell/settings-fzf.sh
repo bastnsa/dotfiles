@@ -1,11 +1,27 @@
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_DEFAULT_OPTS="--bind ctrl-j:next-history,ctrl-k:previous-history'"
-export FZF_DEFAULT_OPTS="--preview 'echo {}'"
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:#242933,bg+:#3B4252
-  --color=hl:#5f87af,hl+:#5fd7ff,info:#8FBCBB,marker:#B48EAD
-  --color=prompt:#81A1C1,spinner:#88C0D0,pointer:#BF616A,header:#8FBCBB
-  --color=border:#4C566A,scrollbar:#4C566A,label:#aeaeae,query:#d9d9d9
-  --border="rounded" --border-label="" --preview-window="border-rounded" --padding="2,3,2,3"
-  --prompt="> " --marker=">" --pointer=">" --separator="─"
-  --scrollbar="│" --info="right"'
+export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/\.git/*"'
+export FZF_CTRL_T_COMMAND='find . -type f -not -path "*/\.git/*"'
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    PREVIEW_CMD="bat --style=numbers --color=always --line-range :500 {}"
+else
+    PREVIEW_CMD="batcat --style=numbers --color=always --line-range :500 {}"
+fi
+
+export FZF_DEFAULT_OPTS="
+    --preview '$PREVIEW_CMD'
+    --preview-window='right:60%'
+    --preview-window='border-rounded'
+    --color=fg:#D8DEE9,fg+:#88C0D0:regular,bg:#2E3440,bg+:#3B4252
+    --color=hl:#EBCB8B,hl+:#EBCB8B:regular,info:#81A1C1,marker:#B48EAD
+    --color=prompt:#81A1C1,spinner:#88C0D0,pointer:#88C0D0,header:#B48EAD
+    --color=border:#4C566A,scrollbar:#4C566A,label:#AEAEAE,query:#D8DEE9:regular
+    --border='rounded'
+    --border-label=''
+    --padding='2,3,2,3'
+    --prompt='> '
+    --marker='>'
+    --pointer='>'
+    --separator='─'
+    --scrollbar='│'
+    --info='right'
+"
