@@ -27,6 +27,11 @@ mcd() {
   cd "$1"
 }
 
+# Create a file and any needed directories
+touchp() {
+  mkdir -p "$(dirname "$1")" && touch "$1"
+}
+
 # Credits to https://github.com/anishathalye
 # Go up [n] directories
 up() {
