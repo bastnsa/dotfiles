@@ -1,0 +1,32 @@
+auto-update = check
+
+cursor-style = block
+
+font-family = "JetBrainsMono NFM Regular"
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+font-size = 15
+font-style-bold = false
+font-style-bold-italic = false
+font-style-italic = false
+font-thicken = true
+
+theme = nord
+palette = 0=8590a7
+selection-background = 414c60
+selection-foreground = 8590a7
+
+title = " "
+macos-titlebar-proxy-icon = hidden
+mouse-hide-while-typing = true
+shell-integration-features = no-cursor
+
+window-height = 50
+window-width = 94
+
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = 81a1c1
+macos-icon-screen-color = 81a1c1
+macos-icon-screen-color = d8dee9
