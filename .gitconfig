@@ -3,7 +3,7 @@
 	aa = add .
 	br = branch -a
 	cl = config --global --list
-  cm = commit -m
+  	cm = commit -m
 	co = checkout
 	d = diff
 	ds = diff --staged
@@ -24,7 +24,7 @@
 	excludesfile = ~/.gitignore_global
 
 [user]
-  useConfigOnly = true
+  	useConfigOnly = true
 
 [color]
 	ui = true
