@@ -60,7 +60,7 @@ Install the following directly or with your preferred package manager:
 - Python venv module and pip (needs to be installed separately on some Linux distros):
   - For Ubuntu/Debian: `sudo apt install python3-venv python3-pip`
 
-In terms of terminal emulators, I use [iTerm2](https://iterm2.com) on macOS, but any terminal that supports true color should do the job just fine. I've also included my json profile, which can be imported directly.
+In terms of terminal emulators, I currently run [Ghostty](https://ghostty.org/docs) on macOS.
 
 ## Getting Started
 
