@@ -14,6 +14,10 @@ font-thicken = true
 
 theme = nord
 palette = 0=8590a7
+palette = 7=d8dee9
+palette = 8=8590a7
+palette = 14=88c0d0
+palette = 15=d8dee9
 selection-background = 414c60
 selection-foreground = 8590a7
 
