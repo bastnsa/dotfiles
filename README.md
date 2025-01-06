@@ -26,15 +26,13 @@ This approach makes it easier to:
 
 To learn more about implementing Stow according to your own configuration or to just get a better idea of how it works, watch [this](https://www.youtube.com/watch?v=FHuwzbpTTo0&list=PLVICUuo69SVpj_kjGKeUFKJSxAKdtr4uS&index=3&t=1s).
 
-On the other hand, if you wish to have something similar to my current configuration, then follow the steps below.
-
-### Neovim
+On the other hand, if you wish to have something similar to my current configuration (featured below), then keep reading.
 
 ![neovim](./assets/neovim.png)
 
-### Tmux
+![macos](./assets/mac.png)
 
-![tmux](./assets/tmux.png)
+![ubuntu](./assets/ubuntu.png)
 
 ## Requirements
 
