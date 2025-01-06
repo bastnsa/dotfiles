@@ -1,6 +1,7 @@
 auto-update = check
 
 cursor-style = block
+working-directory = home
 
 font-family = "JetBrainsMono NFM Regular"
 font-feature = -calt
