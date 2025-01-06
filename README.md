@@ -46,7 +46,7 @@ Install the following directly or with your preferred package manager:
 - [Eza](https://github.com/eza-community/eza)
 - [Fzf](https://github.com/junegunn/fzf)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) (suggested dependency for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#getting-started))
-- [Nerd Font](https://www.nerdfonts.com) (required for the featured Neovim icons, I use JetBrainsMono)
+- [Nerd Font](https://www.nerdfonts.com) (may not be required if running Ghostty)
 - C++ compiler (required for compiling certain Neovim plugins):
   - For macOS: Xcode Command Line Tools
   - For Linux: GCC (GNU Compiler Collection)
@@ -55,8 +55,7 @@ Install the following directly or with your preferred package manager:
   - For WSL: win32yank
 - Node and npm (required for certain Neovim plugins)
 - Python 3 (required for certain Neovim plugins)
-- Python venv module and pip (needs to be installed separately on some Linux distros):
-  - For Ubuntu/Debian: `sudo apt install python3-venv python3-pip`
+- Python venv module and pip (needs to be installed separately on some Linux distros)
 
 In terms of terminal emulators, I currently run [Ghostty](https://ghostty.org/docs) on macOS.
 
