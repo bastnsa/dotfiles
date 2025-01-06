@@ -3,12 +3,13 @@
 local c = require("settings.colors")
 
 -- General
-vim.api.nvim_set_hl(0, "Cursor", { fg = "#1f1f1f", bg = c.nord4 })
+vim.api.nvim_set_hl(0, "Cursor", { fg = c.nord0, bg = c.nord4 })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.purple, bold = false })
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = c.nord1 })
 vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = c.nord1 })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = c.nord1 })
+vim.api.nvim_set_hl(0, "MatchParen", { fg = c.nord0, bg = c.red })
 
 -- Dashboard
 vim.api.nvim_set_hl(0, "DashboardArt", { fg = c.nord4 })
