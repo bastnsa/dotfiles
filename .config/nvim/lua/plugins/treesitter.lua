@@ -14,6 +14,7 @@ return {
 			},
 			indent = { enable = true },
 			ensure_installed = {
+				"astro",
 				"c",
 				"css",
 				"html",
@@ -24,6 +25,8 @@ return {
 				"markdown_inline",
 				"python",
 				"query",
+				"tsx",
+				"typescript",
 				"vim",
 				"vimdoc",
 			},

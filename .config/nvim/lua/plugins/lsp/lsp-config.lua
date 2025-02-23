@@ -46,12 +46,6 @@ return {
 				opts.desc = "Show buffer diagnostics"
 				map("n", "<leader>bd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
-				opts.desc = "Go to previous diagnostic"
-				map("n", "[d", vim.diagnostic.goto_prev, opts)
-
-				opts.desc = "Go to next diagnostic"
-				map("n", "]d", vim.diagnostic.goto_next, opts)
-
 				opts.desc = "Restart LSP"
 				map("n", "<leader>rs", ":LspRestart<CR>", opts)
 			end,

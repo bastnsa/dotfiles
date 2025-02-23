@@ -19,6 +19,7 @@ return {
 		})
 		require("mason-lspconfig").setup({
 			ensure_installed = {
+				"astro",
 				"cssls",
 				"emmet_ls",
 				"html",
