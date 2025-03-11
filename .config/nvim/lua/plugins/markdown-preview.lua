@@ -6,6 +6,6 @@ return {
 		vim.fn["mkdp#util#install"]()
 	end,
 	init = function()
-		vim.g.mkdp_auto_start = 1
+		vim.g.mkdp_auto_start = 0
 	end,
 }
