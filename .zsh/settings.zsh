@@ -1,5 +1,5 @@
 # Initialize completion
-autoload -U compinit compinit
+autoload -U compinit && compinit
 zstyle ':completion:*' list-dirs-first true
 
 # Bat

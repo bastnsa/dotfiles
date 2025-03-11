@@ -14,3 +14,10 @@ source ~/.zsh/settings.zsh
 source ~/.zsh/plugins/autosuggestions.zsh
 source ~/.zsh/plugins/syntax-highlighting.zsh
 source ~/.zsh/plugins/zoxide.zsh
+
+# bun completions
+[ -s "/Users/bastiansalinas/.bun/_bun" ] && source "/Users/bastiansalinas/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
