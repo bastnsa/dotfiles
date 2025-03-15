@@ -12,6 +12,18 @@ return {
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local map = vim.keymap.set
 
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+			border = "rounded",
+			title = "Documentation",
+			width = math.floor(vim.o.columns * 0.5),
+			height = math.floor(vim.o.lines * 0.3),
+		})
+
+		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+			border = "rounded",
+			title = "Signature Help",
+		})
+
 		-- After the LSP attaches to the current buffer
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -71,6 +83,16 @@ return {
 				lspconfig["emmet_ls"].setup({
 					capabilities = capabilities,
 					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss" },
+				})
+			end,
+			-- Explicitly disable Deno for non-Deno projects
+			["denols"] = function()
+				lspconfig["denols"].setup({
+					root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+					init_options = {
+						enable = false,
+						lint = false,
+					},
 				})
 			end,
 		})

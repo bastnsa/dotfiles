@@ -8,9 +8,7 @@ map("n", "<leader>l", ":bnext<CR>", { desc = "Go to next buffer", silent = true 
 map("n", "<leader>h", ":bprevious<CR>", { desc = "Go to previous buffer", silent = true })
 
 -- Code
-map("n", "<leader>ru", function()
-	RunCode()
-end, { desc = "Run the code of the current file", silent = false })
+map("n", "<leader>ru", RunCode, { desc = "Run the code of the current file", silent = true })
 map("n", "<leader>ff", ":SnipRun<CR>", { desc = "Run the code of the current line", silent = true })
 map("v", "f", ":'<,'>SnipRun<CR>", { desc = "Run the code of the highlighted lines", silent = true })
 map(
@@ -46,7 +44,8 @@ map("n", "<leader>tp", ":tabp<CR>", { desc = "Go to previous tab", silent = true
 map("n", "<leader>tb", ":tabnew %<CR>", { desc = "Open the current buffer in a new tab", silent = true })
 
 -- Terminal
+map({ "n", "t" }, "<leader>tt", ToggleTerminal, { desc = "Toggle terminal as floating window", silent = true })
 map("n", "<leader>mo", ":bot 10 new | terminal<CR>A", { desc = "Open terminal in lower split", silent = true })
 map("n", "<leader>mn", ":terminal<CR>A", { desc = "Open terminal in a new window", silent = true })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode", silent = true })
-map("n", "<leader>mc", ":bdelete!<CR>", { desc = "Close the current terminal", silent = true })
+map("n", "<leader>mc", ":bdelete!<CR>", { desc = "Close the current terminal buffer", silent = true })
