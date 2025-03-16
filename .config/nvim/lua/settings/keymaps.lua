@@ -44,7 +44,7 @@ map("n", "<leader>tp", ":tabp<CR>", { desc = "Go to previous tab", silent = true
 map("n", "<leader>tb", ":tabnew %<CR>", { desc = "Open the current buffer in a new tab", silent = true })
 
 -- Terminal
-map({ "n", "t" }, "<leader>tt", ToggleTerminal, { desc = "Toggle terminal as floating window", silent = true })
+map("n", "<leader>tt", ToggleTerminal, { desc = "Toggle terminal as floating window", silent = true })
 map("n", "<leader>mo", ":bot 10 new | terminal<CR>A", { desc = "Open terminal in lower split", silent = true })
 map("n", "<leader>mn", ":terminal<CR>A", { desc = "Open terminal in a new window", silent = true })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode", silent = true })
