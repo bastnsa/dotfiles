@@ -80,6 +80,9 @@ function RunCode()
 		py = {
 			default = "python3 %",
 		},
+		rs = {
+			default = "cargo run %",
+		},
 	}
 
 	if supported_filetypes[file_extension] then

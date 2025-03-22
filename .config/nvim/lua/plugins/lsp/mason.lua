@@ -27,6 +27,7 @@ return {
 				"lua_ls",
 				"marksman",
 				"pyright",
+				"rust_analyzer",
 			},
 		})
 		require("mason-tool-installer").setup({
