@@ -1,5 +1,6 @@
 auto-update = check
 
+cursor-color = d8dee9
 cursor-style = block
 working-directory = home
 
