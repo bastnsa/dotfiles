@@ -9,7 +9,7 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { fg = c.purple, bold = false })
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = c.nord1 })
 vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = c.nord1 })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = c.nord1 })
-vim.api.nvim_set_hl(0, "MatchParen", { fg = c.nord0, bg = c.red })
+vim.api.nvim_set_hl(0, "MatchParen", { fg = c.nord0, bg = c.orange })
 
 -- Dashboard
 vim.api.nvim_set_hl(0, "DashboardArt", { fg = c.nord4 })
@@ -42,7 +42,7 @@ vim.api.nvim_set_hl(0, "@type", { fg = c.nord8 })
 vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.nord9 })
 
 -- Markup
-vim.api.nvim_set_hl(0, "@markup.heading", { fg = c.purple })
+vim.api.nvim_set_hl(0, "@markup.heading", { fg = c.white })
 vim.api.nvim_set_hl(0, "@markup.link", { fg = c.white })
 vim.api.nvim_set_hl(0, "@markup.link.label", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@markup.link.url", { fg = c.nord8 })
@@ -56,7 +56,7 @@ vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { fg = c.red })
 vim.api.nvim_set_hl(0, "NeoTreeRootName", { fg = c.nord9 })
 
 -- Primitives
-vim.api.nvim_set_hl(0, "@boolean", { fg = c.nord9 })
+vim.api.nvim_set_hl(0, "@boolean", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@number", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@number.float", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@string", { fg = c.nord7 })
@@ -68,7 +68,8 @@ vim.api.nvim_set_hl(0, "@punctuation.bracket", { fg = c.nord4 })
 vim.api.nvim_set_hl(0, "@punctuation.special", { fg = c.nord4 })
 
 -- Tags
-vim.api.nvim_set_hl(0, "@tag", { fg = c.nord9 })
+vim.api.nvim_set_hl(0, "@tag", { fg = c.red })
+vim.api.nvim_set_hl(0, "@tag.builtin", { fg = c.red })
 vim.api.nvim_set_hl(0, "@tag.attribute", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@tag.delimiter", { fg = c.grey2 })
 
