@@ -8,6 +8,8 @@ opt.cursorline = true
 opt.wrap = false
 opt.signcolumn = "yes"
 opt.showmode = false
+opt.showcmd = false
+opt.ruler = false
 opt.fillchars = { eob = " " }
 opt.guicursor = "n-v-c-i:block-Cursor"
 opt.termguicolors = true
