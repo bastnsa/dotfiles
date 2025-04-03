@@ -83,6 +83,9 @@ function RunCode()
 		rs = {
 			default = "cargo run %",
 		},
+		ts = {
+			default = "bun run %",
+		},
 	}
 
 	if supported_filetypes[file_extension] then
