@@ -14,9 +14,21 @@ return {
 				b = { fg = c.purple, bg = c.nord1 },
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
-			insert = { a = { fg = c.nord1, bg = c.nord6, gui = "bold" } },
-			visual = { a = { fg = c.nord1, bg = c.nord7, gui = "bold" } },
-			replace = { a = { fg = c.nord1, bg = c.red, gui = "bold" } },
+			insert = {
+				a = { fg = c.nord1, bg = c.nord4, gui = "bold" },
+				b = { fg = c.nord4, bg = c.nord1 },
+				c = { fg = c.nord4, bg = c.nord2 },
+			},
+			visual = {
+				a = { fg = c.nord1, bg = c.nord7, gui = "bold" },
+				b = { fg = c.nord7, bg = c.nord1 },
+				c = { fg = c.nord4, bg = c.nord2 },
+			},
+			replace = {
+				a = { fg = c.nord1, bg = c.red, gui = "bold" },
+				b = { fg = c.red, bg = c.nord1 },
+				c = { fg = c.nord4, bg = c.nord2 },
+			},
 			inactive = {
 				c = { fg = c.nord0, bg = c.nord2 },
 			},
