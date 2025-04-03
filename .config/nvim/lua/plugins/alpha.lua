@@ -13,7 +13,6 @@ return {
 			[[                                                                       ]],
 			[[                                                                       ]],
 			[[                                                                       ]],
-			[[                                                                       ]],
 			[[                                                                     ]],
 			[[       ████ ██████           █████      ██                     ]],
 			[[      ███████████             █████                             ]],
@@ -33,30 +32,16 @@ return {
 			dashboard.button("e", "  Explore", ":Neotree filesystem reveal left toggle<CR>"),
 			dashboard.button("r", "  Recent", ":Telescope oldfiles<CR>"),
 			dashboard.button("n", "  New File", ":ene<CR>"),
-			dashboard.button("f", "󰈞  Find File", ":Telescope find_files hidden=true<CR>"),
-			dashboard.button(
-				"t",
-				"󱎸  Find Text",
-				":lua require('telescope.builtin').live_grep({hidden=true, additional_args=function() return {'--hidden'} end})<CR>"
-			),
+			dashboard.button("f", "󰈞  Find File", ":DashboardFindFile<CR>"),
+			dashboard.button("t", "󱎸  Find Text", ":DashboardFindText<CR>"),
 			dashboard.button("l", "  Load Lazy", ":Lazy<CR>"),
 			dashboard.button("q", "  Quit NVIM", ":qa<CR>"),
 		}
+
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = "DashboardIcons"
-		end
-		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl_shortcut = "DashboardKeys"
 		end
-
-		-- Set footer
-		local direct = vim.loop.cwd()
-		dashboard.section.footer.opts.hl = "DashboardPath"
-		dashboard.section.footer.val = {
-			"",
-			"",
-			"~" .. direct,
-		}
 
 		-- Send config to alpha
 		alpha.setup(dashboard.opts)
