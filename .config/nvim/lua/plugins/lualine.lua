@@ -30,7 +30,7 @@ return {
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			inactive = {
-				c = { fg = c.nord0, bg = c.nord2 },
+				c = { fg = c.nord1, bg = c.nord2 },
 			},
 		}
 
