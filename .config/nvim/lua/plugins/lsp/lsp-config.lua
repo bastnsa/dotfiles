@@ -12,16 +12,33 @@ return {
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local map = vim.keymap.set
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-			border = "rounded",
-			title = "Documentation",
-			width = math.floor(vim.o.columns * 0.5),
-			height = math.floor(vim.o.lines * 0.3),
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+			},
+			virtual_text = true,
+			update_in_insert = false,
+			underline = true,
+			severity_sort = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = true,
+				header = "",
+				prefix = "",
+			},
 		})
 
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-			border = "rounded",
-			title = "Signature Help",
+		vim.api.nvim_create_autocmd("ColorScheme", {
+			callback = function()
+				vim.api.nvim_set_hl(0, "LspReferenceTarget", {})
+			end,
 		})
 
 		-- After the LSP attaches to the current buffer
@@ -30,45 +47,41 @@ return {
 			callback = function(ev)
 				local opts = { buffer = ev.buf, silent = true }
 
-				-- LSP keymappings with descriptions (`:help vim.lsp.*`)
 				opts.desc = "Show documentation for what is under cursor"
-				map("n", "K", vim.lsp.buf.hover, opts)
+				map("n", "K", function()
+					vim.lsp.buf.hover({
+						border = "rounded",
+						focusable = true,
+						style = "minimal",
+						max_width = 70,
+					})
+				end, opts)
 
-				opts.desc = "See available code actions"
-				map({ "n", "v" }, "<leader>ct", vim.lsp.buf.code_action, opts)
+				opts.desc = "Buffer diagnostics"
+				map("n", "<leader>bd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+
+				opts.desc = "Code actions"
+				map({ "n", "v" }, "ca", vim.lsp.buf.code_action, opts)
 
 				opts.desc = "Go to implementation"
 				map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 
-				opts.desc = "Show references"
-				map("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-
-				opts.desc = "Show definition"
+				opts.desc = "Go to definition"
 				map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
-				opts.desc = "Show type definition"
+				opts.desc = "Go to type definition"
 				map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
-				opts.desc = "Go to declaration"
-				map("n", "gD", vim.lsp.buf.declaration, opts)
-
-				opts.desc = "Smart rename"
-				map("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-				opts.desc = "Show buffer diagnostics"
-				map("n", "<leader>bd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+				opts.desc = "Grep references"
+				map("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 
 				opts.desc = "Restart LSP"
 				map("n", "<leader>rs", ":LspRestart<CR>", opts)
+
+				opts.desc = "Smart rename"
+				map("n", "<leader>rn", vim.lsp.buf.rename, opts)
 			end,
 		})
-
-		-- Change the Diagnostic symbols in the sign column (gutter)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
 
 		-- Setup LSP config for installed servers
 		mason_lspconfig.setup_handlers({
@@ -83,16 +96,6 @@ return {
 				lspconfig["emmet_ls"].setup({
 					capabilities = capabilities,
 					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss" },
-				})
-			end,
-			-- Explicitly disable Deno for non-Deno projects
-			["denols"] = function()
-				lspconfig["denols"].setup({
-					root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-					init_options = {
-						enable = false,
-						lint = false,
-					},
 				})
 			end,
 		})
