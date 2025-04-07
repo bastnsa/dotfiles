@@ -13,7 +13,7 @@ return {
 	green = "#A3BE8C",
 	grey = "#9AAAC6",
 	grey2 = "#808FA9",
-	orange = "#D08770",
+	orange = "#E0AE9C",
 	purple = "#B48EAD",
 	red = "#BF616A",
 	white = "#FFFFFF",
