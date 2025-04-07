@@ -15,10 +15,10 @@ return {
 		vim.diagnostic.config({
 			signs = {
 				text = {
-					[vim.diagnostic.severity.ERROR] = " ",
-					[vim.diagnostic.severity.WARN] = " ",
-					[vim.diagnostic.severity.HINT] = "󰠠 ",
-					[vim.diagnostic.severity.INFO] = " ",
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = "",
+					[vim.diagnostic.severity.HINT] = "󰌶 ",
+					[vim.diagnostic.severity.INFO] = "",
 				},
 			},
 			virtual_text = true,
@@ -91,11 +91,31 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			-- Emmet config
+
 			["emmet_ls"] = function()
 				lspconfig["emmet_ls"].setup({
 					capabilities = capabilities,
 					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss" },
+				})
+			end,
+
+			["cssls"] = function()
+				lspconfig["cssls"].setup({
+					capabilities = capabilities,
+					settings = {
+						css = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+						scss = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+					},
 				})
 			end,
 		})
