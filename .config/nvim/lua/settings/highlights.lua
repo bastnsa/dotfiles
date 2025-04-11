@@ -32,19 +32,16 @@ vim.api.nvim_set_hl(0, "@keyword", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@keyword.conditional", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@keyword.conditional.ternary", { fg = c.grey2 })
 vim.api.nvim_set_hl(0, "@keyword.coroutine", { fg = c.red })
-vim.api.nvim_set_hl(0, "@keyword.exception", { fg = c.red })
 vim.api.nvim_set_hl(0, "@keyword.function", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@keyword.modifier", { fg = c.red })
 vim.api.nvim_set_hl(0, "@keyword.operator", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@keyword.repeat", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@keyword.return", { fg = c.grey })
-vim.api.nvim_set_hl(0, "@type", { fg = c.nord7 })
-vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.nord8 })
 
 -- Markup
 vim.api.nvim_set_hl(0, "@markup.heading", { fg = c.white })
 vim.api.nvim_set_hl(0, "@markup.link", { fg = c.white })
-vim.api.nvim_set_hl(0, "@markup.link.label", { fg = c.grey })
+vim.api.nvim_set_hl(0, "@markup.link.label", { fg = c.nord4 })
 vim.api.nvim_set_hl(0, "@markup.link.url", { fg = c.nord8 })
 vim.api.nvim_set_hl(0, "@markup.list", { fg = c.grey2 })
 vim.api.nvim_set_hl(0, "@markup.quote", { fg = c.grey })
@@ -59,10 +56,11 @@ vim.api.nvim_set_hl(0, "NeoTreeRootName", { fg = c.nord9 })
 vim.api.nvim_set_hl(0, "@boolean", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@number", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@number.float", { fg = c.purple })
-vim.api.nvim_set_hl(0, "@string", { fg = c.orange })
+vim.api.nvim_set_hl(0, "@string", { fg = c.nord7 })
 vim.api.nvim_set_hl(0, "@string.regexp", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@string.escape", { fg = c.grey })
-vim.api.nvim_set_hl(0, "@string.special", { fg = c.grey })
+vim.api.nvim_set_hl(0, "@string.special", { fg = c.nord4 })
+vim.api.nvim_set_hl(0, "@character.special", { fg = c.yellow })
 
 -- Punctuation
 vim.api.nvim_set_hl(0, "@operator", { fg = c.grey2 })
@@ -76,7 +74,15 @@ vim.api.nvim_set_hl(0, "@tag.builtin", { fg = c.red })
 vim.api.nvim_set_hl(0, "@tag.attribute", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@tag.delimiter", { fg = c.grey2 })
 
+-- Types
+vim.api.nvim_set_hl(0, "@type", { fg = c.nord8 })
+vim.api.nvim_set_hl(0, "@type.builtin", { fg = c.nord8 })
+vim.api.nvim_set_hl(0, "@lsp.type.class", { fg = c.nord9 })
+
 -- Variables
 vim.api.nvim_set_hl(0, "@variable.builtin", { fg = c.grey })
 vim.api.nvim_set_hl(0, "@variable.parameter", { fg = c.nord4 })
 vim.api.nvim_set_hl(0, "@variable.parameter.builtin", { fg = c.grey })
+
+-- YAML
+vim.api.nvim_set_hl(0, "@property.yaml", { fg = c.nord4 })

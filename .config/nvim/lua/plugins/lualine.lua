@@ -5,27 +5,27 @@ return {
 		local c = require("settings.colors")
 		local nord = {
 			normal = {
-				a = { fg = c.nord1, bg = c.nord9, gui = "bold" },
+				a = { fg = c.nord1, bg = c.nord9 },
 				b = { fg = c.nord9, bg = c.nord1 },
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			command = {
-				a = { fg = c.nord1, bg = c.purple, gui = "bold" },
+				a = { fg = c.nord1, bg = c.purple },
 				b = { fg = c.purple, bg = c.nord1 },
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			insert = {
-				a = { fg = c.nord1, bg = c.nord4, gui = "bold" },
+				a = { fg = c.nord1, bg = c.nord4 },
 				b = { fg = c.nord4, bg = c.nord1 },
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			visual = {
-				a = { fg = c.nord1, bg = c.nord7, gui = "bold" },
+				a = { fg = c.nord1, bg = c.nord7 },
 				b = { fg = c.nord7, bg = c.nord1 },
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
 			replace = {
-				a = { fg = c.nord1, bg = c.red, gui = "bold" },
+				a = { fg = c.nord1, bg = c.red },
 				b = { fg = c.red, bg = c.nord1 },
 				c = { fg = c.nord4, bg = c.nord2 },
 			},
