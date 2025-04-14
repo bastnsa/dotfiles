@@ -2,10 +2,11 @@
 \.gitignore
 \.gitmodules
 
+.*\.DS_Store
+
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
 
 assets
 
-iterm-nord.json
