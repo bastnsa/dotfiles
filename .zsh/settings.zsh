@@ -1,6 +1,5 @@
 # Initialize completion
-autoload -U compinit && compinit
-zstyle ':completion:*' list-dirs-first true
+autoload -U compinit; compinit
 
 # Bat
 export BAT_THEME=base16
