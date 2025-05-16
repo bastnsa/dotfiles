@@ -1,8 +1,8 @@
 # Main aliases
 alias cl='clear'
-alias l='eza --color=always --grid --group-directories-first --long --no-filesize --no-permissions --no-time --no-user'
-alias la='eza --all --color=always --grid --group-directories-first --long --no-filesize --no-permissions --no-time --no-user'
-alias ll='eza --all --color=always --long --no-user --reverse --sort=modified --binary'
+alias l='eza --color=always --group-directories-first --long --no-filesize --no-permissions --no-time --no-user'
+alias la='eza --all --color=always --group-directories-first --long --no-filesize --no-permissions --no-time --no-user'
+alias ll='eza --all --color=always --group-directories-first --long --no-user --reverse --sort=modified --binary'
 alias t='eza --all --color=always --group-directories-first --level=2 --long --no-filesize --no-permissions --no-time --no-user --tree'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -28,7 +28,7 @@ mcd() {
 }
 
 # Create a file and any needed directories
-touchp() {
+tp() {
   mkdir -p "$(dirname "$1")" && touch "$1"
 }
 
