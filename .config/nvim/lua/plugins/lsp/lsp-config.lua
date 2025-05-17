@@ -4,12 +4,8 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
-		local mason_lspconfig = require("mason-lspconfig")
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local map = vim.keymap.set
 
 		vim.diagnostic.config({
@@ -80,43 +76,6 @@ return {
 
 				opts.desc = "Smart rename"
 				map("n", "<leader>rn", vim.lsp.buf.rename, opts)
-			end,
-		})
-
-		-- Setup LSP config for installed servers
-		mason_lspconfig.setup_handlers({
-			-- Default config
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-
-			["emmet_ls"] = function()
-				lspconfig["emmet_ls"].setup({
-					capabilities = capabilities,
-					filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss" },
-				})
-			end,
-
-			["cssls"] = function()
-				lspconfig["cssls"].setup({
-					capabilities = capabilities,
-					settings = {
-						css = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-						scss = {
-							validate = true,
-							lint = {
-								unknownAtRules = "ignore",
-							},
-						},
-					},
-				})
 			end,
 		})
 	end,
