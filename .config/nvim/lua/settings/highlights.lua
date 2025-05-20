@@ -58,7 +58,7 @@ vim.api.nvim_set_hl(0, "@number", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@number.float", { fg = c.purple })
 vim.api.nvim_set_hl(0, "@string", { fg = c.nord7 })
 vim.api.nvim_set_hl(0, "@string.regexp", { fg = c.grey })
-vim.api.nvim_set_hl(0, "@string.escape", { fg = c.grey })
+vim.api.nvim_set_hl(0, "@string.escape", { fg = c.yellow })
 vim.api.nvim_set_hl(0, "@string.special", { fg = c.nord4 })
 vim.api.nvim_set_hl(0, "@character.special", { fg = c.yellow })
 
