@@ -13,11 +13,9 @@ alias py='python3'
 # Shell specific
 if [ -n "$BASH_VERSION" ]; then
     alias bat='batcat'
-    alias fman='compgen -c | fzf | xargs man'
     alias so='source ~/.bashrc'
 fi
 if [ -n "$ZSH_VERSION" ]; then
-    alias fman='print -l ${(k)commands} | fzf | xargs man'
     alias so='source ~/.zshrc'
 fi
 
