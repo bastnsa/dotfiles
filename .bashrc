@@ -11,4 +11,4 @@ source ~/.shell/functions.sh
 source ~/.bash/settings.bash
 
 # Local machine-specific configurations (not tracked by git)
-[ -f "$HOME/.bash/local.bash" ] && source "$HOME/.bash/local.bash"
+[ -f "$HOME/.bashrc_local" ] && source "$HOME/.bashrc_local"
