@@ -9,14 +9,6 @@ map("n", "<leader>h", ":bprevious<CR>", { desc = "Go to previous buffer", silent
 
 -- Code
 map("n", "<leader>ru", RunCode, { desc = "Run the code of the current file", silent = true })
-map("n", "<leader>ff", ":SnipRun<CR>", { desc = "Run the code of the current line", silent = true })
-map("v", "f", ":'<,'>SnipRun<CR>", { desc = "Run the code of the highlighted lines", silent = true })
-map(
-	"n",
-	"<leader>fu",
-	":let b:caret=winsaveview()<CR> | :%SnipRun <CR>| :call winrestview (b:caret) <CR>",
-	{ desc = "Run the code of the current file", silent = true }
-)
 
 -- Search
 map("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights", silent = true })
