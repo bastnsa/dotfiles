@@ -16,4 +16,4 @@ source ~/.zsh/plugins/syntax-highlighting.zsh
 source ~/.zsh/plugins/zoxide.zsh
 
 # Local machine-specific configurations (not tracked by git)
-[ -f "$HOME/.zsh/local.zsh" ] && source "$HOME/.zsh/local.zsh"
+[ -f "$HOME/.zshrc_local" ] && source "$HOME/.zshrc_local"
