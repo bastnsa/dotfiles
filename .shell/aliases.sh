@@ -25,6 +25,15 @@ mcd() {
   cd "$1"
 }
 
+# fzf a file and open with nvim
+nf() {
+    local file
+    file=$(fzf --height=40%)
+    if [[ -n "$file" ]]; then
+      nvim "$file"
+    fi
+}
+
 # Create a file and any needed directories
 tp() {
   mkdir -p "$(dirname "$1")" && touch "$1"
