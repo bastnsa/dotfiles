@@ -1,5 +1,4 @@
 -- Highlight groups ":h treesitter-highlight-groups"
-
 local c = require("settings.colors")
 
 -- General

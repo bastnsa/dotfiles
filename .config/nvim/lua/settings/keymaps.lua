@@ -1,4 +1,3 @@
--- For conciseness
 local map = vim.keymap.set
 
 -- Buffers

@@ -1,4 +1,3 @@
--- For consiceness
 local opt = vim.opt
 
 -- General UI
