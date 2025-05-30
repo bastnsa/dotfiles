@@ -28,11 +28,11 @@ map("n", "<C-l>", "<C-w>l", { desc = "Move focus to the right split", silent = t
 map("n", "<C-j>", "<C-w>j", { desc = "Move focus to the lower split", silent = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Move focus to the upper split", silent = true })
 
--- Tabs
-map("n", "<leader>to", ":tabnew<CR>", { desc = "Open a new tab", silent = true })
-map("n", "<leader>tn", ":tabn<CR>", { desc = "Go to next tab", silent = true })
-map("n", "<leader>tp", ":tabp<CR>", { desc = "Go to previous tab", silent = true })
-map("n", "<leader>tb", ":tabnew %<CR>", { desc = "Open the current buffer in a new tab", silent = true })
+-- Telescope
+map("n", "<leader>fd", ":TodoTelescope<CR>", { silent = true })
+map("n", "<leader>ff", ":FindFiles<CR>", { silent = true })
+map("n", "<leader>fr", ":FindRecent<CR>", { silent = true })
+map("n", "<leader>fs", ":GrepSearch<CR>", { silent = true })
 
 -- Terminal
 map("n", "<leader>tt", ToggleTerminal, { desc = "Toggle terminal as floating window", silent = true })

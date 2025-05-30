@@ -6,11 +6,13 @@ autocmd("VimEnter", {
 	group = core,
 	callback = function()
 		if vim.fn.argc() == 0 and vim.bo.buftype == "" and vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
-			vim.keymap.set("n", "e", ":Neotree filesystem reveal left toggle<CR>", { buffer = true, silent = true })
-			vim.keymap.set("n", "l", ":Lazy<CR>", { buffer = true, silent = true })
-			vim.keymap.set("n", "f", ":Telescope find_files<CR>", { buffer = true, silent = true })
-			vim.keymap.set("n", "r", ":Telescope oldfiles<CR>", { buffer = true, silent = true })
-			vim.keymap.set("n", "q", ":qa<CR>", { buffer = true, silent = true })
+			local map = vim.keymap.set
+			map("n", "e", ":Neotree filesystem reveal left toggle<CR>", { buffer = true, silent = true })
+			map("n", "l", ":Lazy<CR>", { buffer = true, silent = true })
+			map("n", "f", ":FindFiles<CR>", { buffer = true, silent = true })
+			map("n", "r", ":FindRecent<CR>", { buffer = true, silent = true })
+			map("n", "s", ":GrepSearch<CR>", { buffer = true, silent = true })
+			map("n", "q", ":qa<CR>", { buffer = true, silent = true })
 		end
 	end,
 })

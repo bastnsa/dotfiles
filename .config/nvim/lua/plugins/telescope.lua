@@ -33,14 +33,18 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>ff", function()
+		vim.api.nvim_create_user_command("FindFiles", function()
 			builtin.find_files({
 				hidden = true,
 				file_ignore_patterns = ignore,
 			})
 		end, {})
 
-		vim.keymap.set("n", "<leader>fs", function()
+		vim.api.nvim_create_user_command("FindRecent", function()
+			builtin.oldfiles()
+		end, {})
+
+		vim.api.nvim_create_user_command("GrepSearch", function()
 			builtin.live_grep({
 				hidden = true,
 				file_ignore_patterns = ignore,
@@ -49,8 +53,5 @@ return {
 				end,
 			})
 		end, {})
-
-		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
-		vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", {})
 	end,
 }
