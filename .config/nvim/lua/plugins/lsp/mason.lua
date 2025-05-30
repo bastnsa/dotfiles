@@ -19,22 +19,23 @@ return {
 		})
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"cssls",
-				"emmet_ls",
-				"html",
-				"jsonls",
+				-- "cssls",
+				-- "emmet_ls",
+				-- "html",
+				-- "jsonls",
 				"lua_ls",
 				"marksman",
+				-- "rust_analyzer",
 			},
 		})
 		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"prettier",
+				-- "black",
+				-- "eslint_d",
+				-- "isort",
+				-- "prettier",
+				-- "pylint",
 				"stylua",
-				"isort",
-				"black",
-				"pylint",
-				"eslint_d",
 			},
 		})
 	end,

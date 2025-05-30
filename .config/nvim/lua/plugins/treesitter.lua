@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
@@ -15,8 +14,10 @@ return {
 			indent = { enable = true },
 			ensure_installed = {
 				"astro",
+				"bash",
 				"c",
 				"css",
+				"comment",
 				"html",
 				"json",
 				"javascript",
@@ -24,11 +25,12 @@ return {
 				"markdown",
 				"markdown_inline",
 				"python",
-				"query",
-				"tsx",
+				"rust",
+				"toml",
 				"typescript",
 				"vim",
 				"vimdoc",
+				"yaml",
 			},
 			auto_install = true,
 			incremental_selection = {
