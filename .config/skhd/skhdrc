@@ -1,0 +1,40 @@
+:: default
+:: app @
+:: window @
+
+# Enter modes
+default < alt - space ; app
+default < shift - space ; window
+
+# Exit modes
+app < escape ; default
+window < escape ; default
+
+# Open apps
+app < i : open -a Safari; skhd -k "escape"
+app < j : open -a Ghostty; skhd -k "escape"
+app < k : open -a LibreWolf; skhd -k "escape"
+app < l : open -a Finder; skhd -k "escape"
+app < m : open -a Music; skhd -k "escape"
+app < o : open -a Obsidian; skhd -k "escape"
+
+# Window movement
+window < j : yabai -m window --focus south; skhd -k "escape"
+window < k : yabai -m window --focus north; skhd -k "escape"
+window < h : yabai -m window --focus west; skhd -k "escape"
+window < l : yabai -m window --focus east; skhd -k "escape"
+
+# Window positioning
+window < d : yabai -m space --mirror x-axis; skhd -k "escape"
+window < s : yabai -m space --mirror y-axis; skhd -k "escape"
+window < t : yabai -m window --toggle float --grid 6:4:1:1:2:4; skhd -k "escape"
+
+# Window sizing
+window < e : yabai -m space --balance; skhd -k "escape"
+window < f : yabai -m window --toggle native-fullscreen; skhd -k "escape"
+window < z : yabai -m window --toggle zoom-fullscreen; skhd -k "escape"
+window < m : yabai -m window --resize bottom_right:50:0; skhd -k "escape"
+window < n : yabai -m window --resize bottom_right:-50:0; skhd -k "escape"
+window < c : yabai -m window --resize bottom_left:-50:0; skhd -k "escape"
+window < v : yabai -m window --resize bottom_left:50:0; skhd -k "escape"
+
