@@ -9,6 +9,10 @@ map("n", "<leader>h", ":bprevious<CR>", { desc = "Go to previous buffer", silent
 -- Code
 map("n", "<leader>ru", RunCode, { desc = "Run the code of the current file", silent = true })
 
+-- Neotree
+map("n", "<leader>n", ":Neotree filesystem reveal_force_cwd float toggle<CR>", { silent = true })
+map("n", "<leader>g", ":Neotree git_status float toggle<CR>", { silent = true })
+
 -- Search
 map("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights", silent = true })
 map(

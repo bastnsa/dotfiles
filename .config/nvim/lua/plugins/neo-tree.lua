@@ -7,9 +7,6 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal_force_cwd left toggle<CR>", { silent = true })
-		vim.keymap.set("n", "<leader>g", ":Neotree git_status bottom toggle<CR>", { silent = true })
-
 		require("neo-tree").setup({
 			default_component_configs = {
 				icon = {
