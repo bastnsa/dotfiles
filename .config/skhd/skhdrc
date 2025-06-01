@@ -18,20 +18,22 @@ app < l : open -a Finder; skhd -k "escape"
 app < m : open -a Music; skhd -k "escape"
 app < o : open -a Obsidian; skhd -k "escape"
 
-# Window movement
+# Window focus
 window < j : yabai -m window --focus south; skhd -k "escape"
 window < k : yabai -m window --focus north; skhd -k "escape"
 window < h : yabai -m window --focus west; skhd -k "escape"
 window < l : yabai -m window --focus east; skhd -k "escape"
 
-# Window positioning
-window < d : yabai -m space --mirror x-axis; skhd -k "escape"
+# Window layout
+window < a : yabai -m window --swap west; skhd -k "escape"
+window < f : yabai -m window --swap east; skhd -k "escape"
 window < s : yabai -m space --mirror y-axis; skhd -k "escape"
+window < x : yabai -m space --mirror x-axis; skhd -k "escape"
 window < t : yabai -m window --toggle float --grid 6:4:1:1:2:4; skhd -k "escape"
 
 # Window sizing
 window < e : yabai -m space --balance; skhd -k "escape"
-window < f : yabai -m window --toggle native-fullscreen; skhd -k "escape"
+window < g : yabai -m window --toggle native-fullscreen; skhd -k "escape"
 window < z : yabai -m window --toggle zoom-fullscreen; skhd -k "escape"
 window < m : yabai -m window --resize bottom_right:50:0; skhd -k "escape"
 window < n : yabai -m window --resize bottom_right:-50:0; skhd -k "escape"
