@@ -10,11 +10,6 @@ vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = c.nord1 })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = c.nord1 })
 vim.api.nvim_set_hl(0, "MatchParen", { fg = c.nord0, bg = c.nord3 })
 
--- Dashboard
-vim.api.nvim_set_hl(0, "DashboardArt", { fg = c.nord4 })
-vim.api.nvim_set_hl(0, "DashboardIcons", { fg = c.grey })
-vim.api.nvim_set_hl(0, "DashboardKeys", { fg = c.purple })
-
 -- Documentation
 vim.api.nvim_set_hl(0, "@comment", { fg = c.nord3 })
 vim.api.nvim_set_hl(0, "@string.documentation", { fg = c.nord3 })
