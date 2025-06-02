@@ -7,7 +7,7 @@ autocmd("VimEnter", {
 	callback = function()
 		if vim.fn.argc() == 0 and vim.bo.buftype == "" and vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
 			local map = vim.keymap.set
-			map("n", "e", ":Neotree filesystem reveal left toggle<CR>", { buffer = true, silent = true })
+			map("n", "e", ":Neotree filesystem reveal_force_cwd float toggle<CR>", { buffer = true, silent = true })
 			map("n", "l", ":Lazy<CR>", { buffer = true, silent = true })
 			map("n", "f", ":FindFiles<CR>", { buffer = true, silent = true })
 			map("n", "r", ":FindRecent<CR>", { buffer = true, silent = true })
