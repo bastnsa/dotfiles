@@ -37,6 +37,7 @@ return {
 					["h"] = "open_split",
 					["x"] = "close_all_nodes",
 				},
+				position = "float",
 			},
 			filesystem = {
 				filtered_items = {
