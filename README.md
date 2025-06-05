@@ -27,25 +27,25 @@ On the other hand, if you wish to replicate my current configuration then be sur
 
 ## Overview
 
-##### Shell Configuration
+#### Shell Configuration
 
 - `.bashrc` / `.zshrc` - Main shell files that source modular components
 - `.bash/` / `.zsh/` - Shell-specific settings, prompts, and plugins
 - `.shell/` - Shared utilities used by both bash and zsh
 
-##### Development Tools
+#### Development Tools
 
 - `.config/nvim/` - Plugin-ready, keymaps, and custom Nord theme
 - `.config/tmux/` - Vim-style navigation and simple status line
 - `.gitconfig` / `.gitignore_global` - Aliases, settings and ignore patterns
 
-##### System Integration (macOS)
+#### System Integration (macOS)
 
 - `.config/yabai/` - Tiling window manager settings
 - `.config/skhd/` - Hotkey daemon for window management shortcuts
 - `.config/ghostty/` - Terminal emulator settings
 
-##### Utility Files
+#### Utility Files
 
 - `.stow-local-ignore` - Files and directories to exclude from stowing
 
