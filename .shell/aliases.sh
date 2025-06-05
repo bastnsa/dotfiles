@@ -9,6 +9,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias nv='nvim'
+alias pn='pnpm'
 alias py='python3'
 
 # Shell specific
