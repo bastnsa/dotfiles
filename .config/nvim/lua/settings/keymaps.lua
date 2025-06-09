@@ -8,6 +8,7 @@ map("n", "<leader>h", ":bprevious<CR>", { desc = "Go to previous buffer", silent
 
 -- Files
 map("n", "<leader>ru", RunFile, { desc = "Run the current file", silent = true })
+map("n", "<leader>so", ":source %<CR>", { desc = "Source the current file", silent = true })
 
 -- Neotree
 map("n", "<leader>n", ":Neotree filesystem reveal_force_cwd float toggle<CR>", { silent = true })
