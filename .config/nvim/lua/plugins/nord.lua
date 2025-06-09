@@ -8,7 +8,7 @@ return {
 			transparent = true,
 			search = { theme = "vscode" },
 			styles = {
-				keywords = { fg = c.grey },
+				keywords = { fg = c.gray },
 				functions = { fg = c.nord9 },
 				bufferline = {
 					modified = { italic = false },
