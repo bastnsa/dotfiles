@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields
 return {
 	"windwp/nvim-ts-autotag",
 	config = function()

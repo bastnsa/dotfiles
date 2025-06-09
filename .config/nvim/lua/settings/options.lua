@@ -2,6 +2,7 @@ local opt = vim.opt
 
 -- Display
 opt.cursorline = true
+opt.fillchars = { eob = " " }
 opt.guicursor = "n-v-c-i:block-Cursor"
 opt.number = true
 opt.relativenumber = true
@@ -12,7 +13,6 @@ opt.showmode = false
 opt.termguicolors = true
 
 -- Behavior
-opt.fillchars = { eob = " " }
 opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.splitbelow = true

@@ -1,8 +1,9 @@
--- Set leader key
 vim.g.mapleader = " "
 
--- Core
-require("core")
+require("core.lazy")
+require("core.autocmds")
+require("core.functions")
 
--- Settings
-require("settings")
+require("settings.highlights")
+require("settings.keymaps")
+require("settings.options")

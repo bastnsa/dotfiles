@@ -1,24 +1,25 @@
 local autocmd = vim.api.nvim_create_autocmd
 local core = vim.api.nvim_create_augroup("Core", { clear = true })
 local map = vim.keymap.set
+local opts = { buffer = true, silent = true }
 
 autocmd("VimEnter", {
-	desc = "Set single-key shortcuts on startup screen and empty buffers",
+	desc = "Set single-key shortcuts on startup and empty buffers",
 	group = core,
 	callback = function()
-		if vim.fn.argc() == 0 and vim.bo.buftype == "" and vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
-			map("n", "e", ":Neotree filesystem reveal_force_cwd float toggle<CR>", { buffer = true, silent = true })
-			map("n", "l", ":Lazy<CR>", { buffer = true, silent = true })
-			map("n", "f", ":FindFiles<CR>", { buffer = true, silent = true })
-			map("n", "r", ":FindRecent<CR>", { buffer = true, silent = true })
-			map("n", "s", ":GrepSearch<CR>", { buffer = true, silent = true })
-			map("n", "q", ":qa<CR>", { buffer = true, silent = true })
+		if vim.fn.argc() == 0 and vim.bo.buftype == "" then
+			map("n", "e", ":Neotree filesystem reveal_force_cwd float toggle<CR>", opts)
+			map("n", "l", ":Lazy<CR>", opts)
+			map("n", "f", ":FindFiles<CR>", opts)
+			map("n", "r", ":FindRecent<CR>", opts)
+			map("n", "s", ":GrepSearch<CR>", opts)
+			map("n", "q", ":qa<CR>", opts)
 		end
 	end,
 })
 
 autocmd("BufReadPre", {
-	desc = "Enable better wrapping and navigation for markdown and text files",
+	desc = "Enable better wrapping and navigation for md and txt files",
 	pattern = "*.md,*.txt",
 	group = core,
 	callback = function()
@@ -26,16 +27,16 @@ autocmd("BufReadPre", {
 		vim.wo.linebreak = true
 		vim.wo.breakindent = true
 
-		map("n", "I", "g0i", { buffer = true })
-		map("n", "A", "g$a", { buffer = true })
-		map("n", "j", "gj", { buffer = true })
-		map("n", "k", "gk", { buffer = true })
-		map("n", "0", "g0", { buffer = true })
-		map("n", "$", "g$", { buffer = true })
-		map("v", "j", "gj", { buffer = true })
-		map("v", "k", "gk", { buffer = true })
-		map("v", "0", "g0", { buffer = true })
-		map("v", "$", "g$", { buffer = true })
+		map("n", "I", "g0i", opts)
+		map("n", "A", "g$a", opts)
+		map("n", "j", "gj", opts)
+		map("n", "k", "gk", opts)
+		map("n", "0", "g0", opts)
+		map("n", "$", "g$", opts)
+		map("v", "j", "gj", opts)
+		map("v", "k", "gk", opts)
+		map("v", "0", "g0", opts)
+		map("v", "$", "g$", opts)
 	end,
 })
 
