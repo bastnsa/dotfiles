@@ -1,5 +1,14 @@
 return {
 	{
+		"folke/lazydev.nvim",
+		ft = "lua",
+		opts = {
+			library = {
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
@@ -48,7 +57,6 @@ return {
 					{ name = "buffer" },
 					{ name = "path" },
 				}),
-				---@diagnostic disable-next-line: missing-fields
 				formatting = {
 					format = lspkind.cmp_format({
 						maxwidth = 50,

@@ -6,8 +6,6 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
-		local map = vim.keymap.set
-
 		vim.diagnostic.config({
 			signs = {
 				text = {
@@ -37,10 +35,10 @@ return {
 			end,
 		})
 
-		-- After the LSP attaches to the current buffer
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
+				local map = vim.keymap.set
 				local opts = { buffer = ev.buf, silent = true }
 
 				opts.desc = "Show documentation for what is under cursor"
