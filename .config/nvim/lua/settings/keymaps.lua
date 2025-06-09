@@ -6,8 +6,8 @@ map("n", "<leader>bc", ":bdelete<CR>", { desc = "Close the current buffer", sile
 map("n", "<leader>l", ":bnext<CR>", { desc = "Go to next buffer", silent = true })
 map("n", "<leader>h", ":bprevious<CR>", { desc = "Go to previous buffer", silent = true })
 
--- Code
-map("n", "<leader>ru", RunCode, { desc = "Run the current file", silent = true })
+-- Files
+map("n", "<leader>ru", RunFile, { desc = "Run the current file", silent = true })
 
 -- Neotree
 map("n", "<leader>n", ":Neotree filesystem reveal_force_cwd float toggle<CR>", { silent = true })

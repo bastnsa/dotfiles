@@ -1,14 +1,31 @@
-local state = {
-	floating = {
-		buf = -1,
-		win = -1,
+local terminal = { buf = -1, win = -1 }
+
+local file_types = {
+	go = {
+		run = "go run %",
+	},
+	js = {
+		run = "node %",
+	},
+	lua = {
+		run = "luajit %",
+	},
+	py = {
+		run = "python3 %",
+	},
+	rs = {
+		run = "cargo run %",
+	},
+	ts = {
+		build = "tsc",
+		dev = "tsc --watch",
+		run = "node --disable-warning=ExperimentalWarning %",
 	},
 }
 
 local function create_floating_window(opts)
-	opts = opts or {}
-	local width = opts.width or math.floor(vim.o.columns * 0.8)
-	local height = opts.height or math.floor(vim.o.lines * 0.6)
+	local width = math.floor(vim.o.columns * 0.8)
+	local height = math.floor(vim.o.lines * 0.8)
 
 	local col = math.floor((vim.o.columns - width) / 2)
 	local row = math.floor((vim.o.lines - height) / 2)
@@ -20,7 +37,7 @@ local function create_floating_window(opts)
 		buf = vim.api.nvim_create_buf(false, true)
 	end
 
-	local win_config = {
+	local config = {
 		relative = "editor",
 		width = width,
 		height = height,
@@ -30,81 +47,52 @@ local function create_floating_window(opts)
 		border = "rounded",
 	}
 
-	local win = vim.api.nvim_open_win(buf, true, win_config)
+	local win = vim.api.nvim_open_win(buf, true, config)
 	return { buf = buf, win = win }
 end
 
 function ToggleTerminal()
-	if not vim.api.nvim_win_is_valid(state.floating.win) then
-		state.floating = create_floating_window({ buf = state.floating.buf })
-		if vim.bo[state.floating.buf].buftype ~= "terminal" then
+	if not vim.api.nvim_win_is_valid(terminal.win) then
+		terminal = create_floating_window({ buf = terminal.buf })
+		if vim.bo[terminal.buf].buftype ~= "terminal" then
 			vim.cmd.terminal()
 		end
 	else
-		vim.api.nvim_win_hide(state.floating.win)
+		vim.api.nvim_win_hide(terminal.win)
 	end
 	vim.cmd("normal i")
 end
 
 local function substitute(cmd)
 	cmd = cmd:gsub("%%", vim.fn.expand("%:p"))
-	cmd = cmd:gsub("$fileBase", vim.fn.expand("%:p:r"))
-	cmd = cmd:gsub("$filePath", vim.fn.expand("%:p"))
-	cmd = cmd:gsub("$dir", vim.fn.expand("%:p:h"))
-	cmd = cmd:gsub("#", vim.fn.expand("#:p"))
 	return cmd
 end
 
 local function execute_in_terminal(cmd)
-	vim.cmd("startinsert")
-	vim.api.nvim_feedkeys(substitute(cmd) .. "\r", "t", false)
 	ToggleTerminal()
+	vim.cmd("startinsert")
+	vim.api.nvim_feedkeys(cmd .. "\r", "t", false)
 end
 
-function RunCode()
-	local file_extension = vim.fn.expand("%:e")
+function RunFile()
 	local selected_cmd = ""
-	local supported_filetypes = {
-		go = {
-			default = "go run %",
-		},
-		html = {
-			default = "live-server %",
-		},
-		js = {
-			default = "node %",
-		},
-		php = {
-			default = "php %",
-		},
-		py = {
-			default = "python3 %",
-		},
-		rs = {
-			default = "cargo run %",
-		},
-		ts = {
-			default = "bun run %",
-		},
-	}
+	local file_extension = vim.fn.expand("%:e")
 
-	if supported_filetypes[file_extension] then
-		local choices = vim.tbl_keys(supported_filetypes[file_extension])
+	if file_types[file_extension] then
+		local choices = vim.tbl_keys(file_types[file_extension])
 
-		if #choices == 0 then
-			vim.notify("Does not contain any command", vim.log.levels.WARN, { title = "Code Runner" })
-		elseif #choices == 1 then
-			selected_cmd = supported_filetypes[file_extension][choices[1]]
-			execute_in_terminal(selected_cmd)
+		if #choices == 1 then
+			selected_cmd = file_types[file_extension][choices[1]]
+			execute_in_terminal(substitute(selected_cmd))
 		else
 			vim.ui.select(choices, { prompt = "Choose a command: " }, function(choice)
-				selected_cmd = supported_filetypes[file_extension][choice]
+				selected_cmd = file_types[file_extension][choice]
 				if selected_cmd then
-					execute_in_terminal(selected_cmd)
+					execute_in_terminal(substitute(selected_cmd))
 				end
 			end)
 		end
 	else
-		vim.notify("File type is not included in the list", vim.log.levels.WARN, { title = "Code Runner" })
+		vim.notify("RunFile: File type is not supported", vim.log.levels.ERROR)
 	end
 end
