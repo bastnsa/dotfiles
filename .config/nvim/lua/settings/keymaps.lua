@@ -20,10 +20,10 @@ map("n", "<leader>n", ":Neotree filesystem reveal_force_cwd float toggle<CR>", {
 -- Search
 map("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights", silent = true })
 map(
-	"n",
-	"<leader>sr",
-	":%s/\\<<C-r><C-w>\\>//g<Left><Left>",
-	{ desc = "Search and replace word under cursor", noremap = true }
+  "n",
+  "<leader>sr",
+  ":%s/\\<<C-r><C-w>\\>//g<Left><Left>",
+  { desc = "Search and replace word under cursor", noremap = true }
 )
 
 -- Splits
