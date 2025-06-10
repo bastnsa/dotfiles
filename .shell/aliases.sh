@@ -1,10 +1,10 @@
-# Main aliases
-alias cl='clear'
+# General
 alias l='eza --color=always --group-directories-first --long --no-user --no-filesize --no-permissions --no-time'
 alias la='eza --all --color=always --group-directories-first --long --no-user --no-filesize --no-permissions --no-time'
-alias ll='eza --all --color=always --group-directories-first --long --no-user --binary --sort=name'
-alias lt='eza --all --color=always --group-directories-first --long --no-user --binary --sort=modified --reverse'
+alias ll='eza --color=always --group-directories-first --long --binary --sort=name'
+alias lla='eza --all --color=always --group-directories-first --long --binary --sort=name'
 alias t='eza --all --color=always --group-directories-first --long --no-user --no-filesize --no-permissions --no-time --tree --level=2'
+alias cl='clear'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -27,7 +27,7 @@ mcd() {
   cd "$1"
 }
 
-# fzf a file and open with nvim
+# fzf and open with nvim
 nf() {
     local file
     file=$(fzf --height=40%)
