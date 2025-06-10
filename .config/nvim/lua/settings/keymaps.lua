@@ -10,9 +10,12 @@ map("n", "<leader>h", ":bprevious<CR>", { desc = "Go to previous buffer", silent
 map("n", "<leader>ru", RunFile, { desc = "Run the current file", silent = true })
 map("n", "<leader>so", ":source %<CR>", { desc = "Source the current file", silent = true })
 
+-- Git
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { silent = true })
+map("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", { silent = true })
+
 -- Neotree
 map("n", "<leader>n", ":Neotree filesystem reveal_force_cwd float toggle<CR>", { silent = true })
-map("n", "<leader>g", ":Neotree git_status float toggle<CR>", { silent = true })
 
 -- Search
 map("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights", silent = true })

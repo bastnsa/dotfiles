@@ -22,6 +22,11 @@ hl(0, "@function.method", { fg = c.nord9 })
 hl(0, "@function.method.call", { fg = c.nord9 })
 hl(0, "@constructor", { fg = c.nord9 })
 
+-- Git
+hl(0, "DiffAdd", { bg = "#313d3a" })
+hl(0, "DiffChange", { bg = "#3d3a31" })
+hl(0, "DiffDelete", { bg = "#3d3135" })
+
 -- Keywords
 hl(0, "@keyword", { fg = c.gray })
 hl(0, "@keyword.conditional", { fg = c.gray })
