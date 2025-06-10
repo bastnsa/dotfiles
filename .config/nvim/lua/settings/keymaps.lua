@@ -34,10 +34,13 @@ map("n", "<C-j>", "<C-w>j", { desc = "Move focus to the lower split", silent = t
 map("n", "<C-k>", "<C-w>k", { desc = "Move focus to the upper split", silent = true })
 
 -- Telescope
-map("n", "<leader>fd", ":TodoTelescope<CR>", { silent = true })
+map("n", "<leader>do", ":FindDotfiles<CR>", { silent = true })
 map("n", "<leader>ff", ":FindFiles<CR>", { silent = true })
+map("n", "<leader>fg", ":FindGitStatus<CR>", { silent = true })
+map("n", "<leader>fh", ":FindHelp<CR>", { silent = true })
 map("n", "<leader>fr", ":FindRecent<CR>", { silent = true })
 map("n", "<leader>fs", ":GrepSearch<CR>", { silent = true })
+map("n", "<leader>ft", ":TodoTelescope<CR>", { silent = true })
 
 -- Terminal
 map("n", "<leader>tt", ToggleTerminal, { desc = "Toggle terminal as floating window", silent = true })

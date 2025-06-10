@@ -51,23 +51,23 @@ return {
 					})
 				end, opts)
 
-				opts.desc = "Buffer diagnostics"
-				map("n", "<leader>bd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
 				opts.desc = "Code actions"
 				map({ "n", "v" }, "ca", vim.lsp.buf.code_action, opts)
 
-				opts.desc = "Go to implementation"
-				map("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+				opts.desc = "Find telescope diagnostics"
+				map("n", "<leader>fd", ":FindDiagnostics<CR>", opts)
+
+				opts.desc = "Find telescope implementations"
+				map("n", "<leader>fi", ":FindImplementations<CR>", opts)
+
+				opts.desc = "Find telescope references"
+				map("n", "<leader>fe", ":FindReferences<CR>", opts)
 
 				opts.desc = "Go to definition"
-				map("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+				map("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 
 				opts.desc = "Go to type definition"
-				map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-
-				opts.desc = "Grep references"
-				map("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+				map("n", "gt", ":Telescope lsp_type_definitions<CR>", opts)
 
 				opts.desc = "Restart LSP"
 				map("n", "<leader>rs", ":LspRestart<CR>", opts)
