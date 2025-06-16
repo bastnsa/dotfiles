@@ -11,6 +11,7 @@ alias rm='rm -i'
 alias nv='nvim'
 alias pn='pnpm'
 alias py='python3'
+alias tm='tmux'
 
 # Shell specific
 if [ -n "$BASH_VERSION" ]; then
